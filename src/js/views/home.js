@@ -1,7 +1,7 @@
 import React, { useEffect,useState } from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
-import { Card } from "../component/card";
+import CardItem from "../component/card";
 export const Home = () => {
 	const [people, setPeople] = useState([]);
 	console.log(people, "people");
@@ -15,7 +15,7 @@ export const Home = () => {
 		<div className="text-center mt-5">
 
 		{people && people.map((item, index) => (
-			<Card key={index}/>
+			<CardItem key={index} name={item.name}/>
 		))}
 	</div>
 
