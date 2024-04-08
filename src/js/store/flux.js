@@ -1,3 +1,6 @@
+import { FaVoicemail } from "react-icons/fa";
+import { FaV } from "react-icons/fa6";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -12,7 +15,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			Favorites: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction

@@ -12,7 +12,7 @@ export const Home = () => {
 			.catch((err) => console.error(err));
 	}, []);
 	return (
-		<div className="text-center mt-5">
+		<div className="text-center mt-5 people">
 
 		{people && people.map((item, index) => (
 			<CardItem key={index} name={item.name}/>
