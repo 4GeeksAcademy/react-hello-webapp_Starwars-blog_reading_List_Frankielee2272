@@ -12,13 +12,13 @@ function CardItem({ name }) {
     console.log("Favorite",store.Favorites)
     store.Favorites.push(name);
   }
+  
   return (
     <div className="people">
 
       <Card style={{ width: '18rem' }}>
         <Card.Body>
           <Card.Title>{name}</Card.Title>
-          <img src={`../../img/Charaters/${name}.jpeg`} alt="Card image cap" />
           <Button variant="primary" onClick={() => addFavorite(name)}><FaHeart /></Button>
         </Card.Body>
       </Card>

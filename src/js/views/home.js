@@ -1,22 +1,18 @@
 import React, { useEffect,useState } from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
+import {People} from "../component/People";
+import {Starship} from "../component/Starship";	
+import {Planet} from "../component/Planet";
 import CardItem from "../component/card";
 export const Home = () => {
-	const [people, setPeople] = useState([]);
-	console.log(people, "people");
-	useEffect(() => {
-		fetch("https://www.swapi.tech/api/people")
-			.then((res) => res.json())
-			.then((data) => setPeople(data.results))
-			.catch((err) => console.error(err));
-	}, []);
+	
 	return (
-		<div className="text-center mt-5 people">
+		<div className="text-center mt-5 home">
 
-		{people && people.map((item, index) => (
-			<CardItem key={index} name={item.name}/>
-		))}
+	<People/>
+	<Planet/>
+	<Starship/>
 	</div>
 
 	)
