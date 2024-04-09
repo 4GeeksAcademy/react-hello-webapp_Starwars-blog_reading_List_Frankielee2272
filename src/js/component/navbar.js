@@ -14,7 +14,7 @@ export const Navbar = () => {
 			<div className="ml-auto">
 			<Dropdown>
       <Dropdown.Toggle variant="primary" id="dropdown-basic">
-        Favorites {store.Favorites.length()}
+	  Favorites {''}
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
