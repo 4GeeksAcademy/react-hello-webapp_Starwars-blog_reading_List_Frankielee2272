@@ -8,9 +8,8 @@ import { Context } from '../store/appContext';
 
 function CardItem({ name }) {
   const { store, actions } = useContext(Context);
-  function addFavorite(name) {
-    console.log("Favorite",store.Favorites)
-    store.Favorites.push(name);
+  const item = {
+    name : name, id:id
   }
   
   return (
@@ -19,7 +18,7 @@ function CardItem({ name }) {
       <Card style={{ width: '18rem' }}>
         <Card.Body>
           <Card.Title>{name}</Card.Title>
-          <Button variant="primary" onClick={() => addFavorite(name)}><FaHeart /></Button>
+          <Button variant="primary" onClick={() => actions.addFavorites(name)}><FaHeart /></Button>
         </Card.Body>
       </Card>
     </div>

@@ -15,7 +15,7 @@ export const People = () => {
 		<div className="text-center mt-5 people">
             <h1>People</h1>
 		{people && people.map((item, index) => (
-			<CardItem key={index} name={item.name}/>
+			<CardItem key={index} name={item.name} id={item.name.uid}/>
 		))}
 	</div>
 
