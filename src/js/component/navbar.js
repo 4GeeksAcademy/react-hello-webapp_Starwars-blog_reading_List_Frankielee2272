@@ -26,14 +26,20 @@ export const Navbar = () => {
 					</Dropdown.Toggle>
 
 					<Dropdown.Menu>
-						{store.Favorites.map((item, index) => (
-							<Dropdown.Item href="#/action-1">
-								{item}
-								<button onClick={(e)=> actions.deleteFavorites(item,e)}>X</button>
-							</Dropdown.Item>
-						))}
-					</Dropdown.Menu>
+    {store.Favorites.map((favorite, index) => (
+        <Dropdown.Item key={index}>
+            {favorite}
+            <button
+                onClick={() => actions.deleteFavorites(favorite)}
+                style={{ marginLeft: '10px' }}
+            >
+                X
+            </button>
+        </Dropdown.Item>
+    ))}
+</Dropdown.Menu>
 				</Dropdown>
+
 			</div>
 		</nav>
 	);

@@ -6,10 +6,11 @@ import "../../styles/home.css";
 import { Context } from '../store/appContext';
 
 
-function CardItem({ name }) {
+function CardItem({ name,id }) {
   const { store, actions } = useContext(Context);
   const item = {
-    name : name, id:id
+    name : name, 
+    id:id
   }
   
   return (
