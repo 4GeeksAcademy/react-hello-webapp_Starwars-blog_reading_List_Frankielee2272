@@ -9,6 +9,7 @@ export const People = () => {
 		fetch("https://www.swapi.tech/api/people")
 			.then((res) => res.json())
 			.then((data) => setPeople(data.results))
+			.then ((data) => console.log(data,"peopleData"))
 			.catch((err) => console.error(err));
 	}, []);
 	return (
