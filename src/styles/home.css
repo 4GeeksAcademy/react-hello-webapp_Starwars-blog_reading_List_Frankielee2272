@@ -1,60 +1,67 @@
-.card{
-    /* display: grid;
-    grid-template-columns:1fr 1fr 1fr 1fr; */
-    display: flex;
-    align-items: center;
-    overflow-x: auto;
-    white-space: nowrap;
-    gap: 20px;
-    max-width: 500px;
-    padding: 2rem 0;
-    flex: 0 0 auto;
+.card-container {
+    display: flex; /* Aligns children (CardItem) in a row */
+    gap: 20px; /* Space between cards */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    padding: 20px 0; /* Vertical padding */
+    /* Remove max-width and flex properties if they are not needed */
+  }
+  
+  /* If you want to style the individual cards, you can target them like this: */
+  .card-container .card {
+    min-width: 180px; /* Minimum width for each card */
+    height: auto; /* Height can be auto to maintain aspect ratio */
+    /* Rest of your styles */
+  }
+  
+  /* Optionally, if you want to remove the scrollbar visibility: */
+  .card-container::-webkit-scrollbar {
+    display: none; /* For Webkit browsers */
+  }
+  
+  .card-container {
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    scrollbar-width: none; /* For Firefox */
+  }
+  
 
+  
+.people {
+  display: flex;
 }
-.people{
-    display: flex;
-}
-.home{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-image: url("https://th.bing.com/th/id/OIP.8Ns3XoEYu0w2rXh1oCj8zgHaEK?rs=1&pid=ImgDetMain");
-    background-size: cover; /* Cover the entire page */
-    background-position: center; /* Center the background image */
-    min-height: 100vh; /* Make sure it covers the whole viewport */
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://th.bing.com/th/id/OIP.8Ns3XoEYu0w2rXh1oCj8zgHaEK?rs=1&pid=ImgDetMain");
+  background-size: cover; /* Cover the entire page */
+  background-position: center; /* Center the background image */
+  min-height: 100vh; /* Make sure it covers the whole viewport */
 }
 
 .home::before {
-    content: ""; /* Required for pseudo-elements */
-    position: absolute; /* Position relative to .home */
-    top: 0;
-    left: 0;
-    right: 0;
-    height:2200px;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.1); /* White overlay with 10% opacity */
-    z-index: 1; /* Ensure it sits above the background image */
+  content: ""; /* Required for pseudo-elements */
+  position: absolute; /* Position relative to .home */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2200px;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1); /* White overlay with 10% opacity */
+  z-index: 1; /* Ensure it sits above the background image */
 }
 
 /* Ensure content is accessible and visible */
 .home > * {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 }
-  
 
 .top-centered-image {
-    display: block; /* Makes it a block-level element */
-    margin: 0 auto; /* Auto margin on both sides for horizontal centering */
-    position: absolute; /* Takes the element out of the document flow */
-    top: 0; /* Positions it at the top of the parent/container */
-    left: 0;
-    right: 0; /* These two ensure it stays centered */
-  }
-  .placeholder{
-    background-color: grey;
-    width: 100%;
-    height: 200px;
-  }
-  
+  display: block; /* Makes it a block-level element */
+  margin: 0 auto; /* Auto margin on both sides for horizontal centering */
+  position: absolute; /* Takes the element out of the document flow */
+  top: 0; /* Positions it at the top of the parent/container */
+  left: 0;
+  right: 0; /* These two ensure it stays centered */
+}

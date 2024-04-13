@@ -14,9 +14,11 @@ export const Planet = () => {
 	return (
 		<div className="text-center mt-5 people">
             <h1>Planets</h1>
+			<div className="card-container">
 		{planet && planet.map((item, index) => (
 			<CardItem key={index} name={item.name}/>
 		))}
+		</div>
 	</div>
 
 	)

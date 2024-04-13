@@ -14,9 +14,11 @@ export const Starship = () => {
 	return (
 		<div className="text-center mt-5 people">
             <h1>Starships</h1>
+			<div className="card-container">
 		{starship && starship.map((item, index) => (
 			<CardItem key={index} name={item.name}/>
 		))}
+		</div>
 	</div>
 
 	)
