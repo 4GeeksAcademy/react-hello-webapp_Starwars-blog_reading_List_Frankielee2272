@@ -1,67 +1,36 @@
-.card-container {
-    display: flex; /* Aligns children (CardItem) in a row */
-    gap: 20px; /* Space between cards */
-    overflow-x: auto; /* Enables horizontal scrolling */
-    padding: 20px 0; /* Vertical padding */
-    /* Remove max-width and flex properties if they are not needed */
-  }
-  
-  /* If you want to style the individual cards, you can target them like this: */
-  .card-container .card {
-    min-width: 180px; /* Minimum width for each card */
-    height: auto; /* Height can be auto to maintain aspect ratio */
-    /* Rest of your styles */
-  }
-  
-  /* Optionally, if you want to remove the scrollbar visibility: */
-  .card-container::-webkit-scrollbar {
-    display: none; /* For Webkit browsers */
-  }
-  
-  .card-container {
-    -ms-overflow-style: none; /* For Internet Explorer and Edge */
-    scrollbar-width: none; /* For Firefox */
-  }
-  
-
-  
-.people {
-  display: flex;
-}
 .home {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url("https://th.bing.com/th/id/OIP.8Ns3XoEYu0w2rXh1oCj8zgHaEK?rs=1&pid=ImgDetMain");
-  background-size: cover; /* Cover the entire page */
-  background-position: center; /* Center the background image */
-  min-height: 100vh; /* Make sure it covers the whole viewport */
+  background-image: url("https://th.bing.com/th/id/OIP.q1iROYSmZKgDJJDQJhE7MQHaEo?w=250&h=180&c=7&r=0&o=5&dpr=1.6&pid=1.7");
+  background-size: cover; /* Ensures the background covers the entire element */
+  background-position: center; /* Centers the background image */
+  min-height: 100vh; /* Ensures the .home element takes up at least the full height of the viewport */
 }
-
 .home::before {
-  content: ""; /* Required for pseudo-elements */
-  position: absolute; /* Position relative to .home */
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2200px;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.1); /* White overlay with 10% opacity */
-  z-index: 1; /* Ensure it sits above the background image */
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white overlay */
+  z-index: 1; /* Ensure it sits above the background image but below other content */
 }
-
-/* Ensure content is accessible and visible */
 .home > * {
   position: relative;
-  z-index: 2;
+  z-index: 2; /* Ensures that all direct children of .home are above the overlay */
+}
+.top-centered-image {
+  display: block;
+  margin: 0 auto; /* Centers the image horizontally */
+  position: absolute;
+  top: 0; /* Aligns the image to the top of the container */
+  left: 0; right: 0; /* These help ensure it remains centered */
 }
 
-.top-centered-image {
-  display: block; /* Makes it a block-level element */
-  margin: 0 auto; /* Auto margin on both sides for horizontal centering */
-  position: absolute; /* Takes the element out of the document flow */
-  top: 0; /* Positions it at the top of the parent/container */
-  left: 0;
-  right: 0; /* These two ensure it stays centered */
+
+.card-container {
+  display: flex;
+  flex-direction: row; /* Ensures horizontal layout */
+  gap: 20px;
+  white-space: nowrap; /* Prevents wrapping to a new line */
 }

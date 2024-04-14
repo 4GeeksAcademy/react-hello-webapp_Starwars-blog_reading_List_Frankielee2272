@@ -14,7 +14,7 @@ function CardItem({ name, id, image }) {
       <Card style={{ width: "18rem", height: "18rem" }}>
       <Card.Img style={{ width: "9rem", height: "9rem" }}
   variant="top"
-  src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}
+  src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}
   
 />
         <Card.Body>

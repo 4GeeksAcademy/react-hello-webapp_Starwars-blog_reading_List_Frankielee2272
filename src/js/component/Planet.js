@@ -1,27 +1,32 @@
-import React, { useEffect,useState } from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useEffect, useState } from "react";
+import CardItem from "../component/PlanetCard";
 import "../../styles/home.css";
-import CardItem from "../component/card";
+
 export const Planet = () => {
-	const [planet, setPlanet] = useState([]);
-	console.log(planet, "planet");
-	useEffect(() => {
-		fetch("https://www.swapi.tech/api/planets")
-			.then((res) => res.json())
-			.then((data) => setPlanet(data.results))
-			.catch((err) => console.error(err));
-	}, []);
-	return (
-		<div className="text-center mt-5 people">
-            <h1>Planets</h1>
-			<div className="card-container">
-		{planet && planet.map((item, index) => (
-			<CardItem key={index} name={item.name}/>
-		))}
-		</div>
-	</div>
+  const [planet, setPlanet] = useState([]);
 
-	)
+  useEffect(() => {
+    fetch("https://www.swapi.tech/api/planets")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.results) {
+          setPlanet(data.results);
+        }
+      })
+      .catch((err) => console.error('Error fetching planets:', err));
+  }, []);
+
+  return (
+    <div className="text-center mt-5">
+      <h1>Planets</h1>
+      <div className="planet-scrollable-container">
+        <div className="card-container">
+          {planet.map((item, index) => (
+            <CardItem key={index} name={item.name} id={item.uid}/>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 };
-	
-
+export default Planet; 

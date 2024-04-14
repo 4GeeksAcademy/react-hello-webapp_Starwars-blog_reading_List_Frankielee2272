@@ -1,27 +1,33 @@
-import React, { useEffect,useState } from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useEffect, useState } from "react";
+import CardItem from "../component/StarShipCard";
 import "../../styles/home.css";
-import CardItem from "../component/card";
+
 export const Starship = () => {
-	const [starship, setStarship] = useState([]);
-	console.log(starship, "Starship");
-	useEffect(() => {
-		fetch("https://www.swapi.tech/api/starships")
-			.then((res) => res.json())
-			.then((data) => setStarship(data.results))
-			.catch((err) => console.error(err));
-	}, []);
-	return (
-		<div className="text-center mt-5 people">
-            <h1>Starships</h1>
-			<div className="card-container">
-		{starship && starship.map((item, index) => (
-			<CardItem key={index} name={item.name}/>
-		))}
-		</div>
-	</div>
+  const [starship, setStarship] = useState([]);
 
-	)
+  useEffect(() => {
+    fetch("https://www.swapi.tech/api/starships")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.results) {
+          setStarship(data.results);
+        }
+      })
+      .catch((err) => console.error('Error fetching starships:', err));
+  }, []);
+
+  return (
+    <div className="text-center mt-5">
+      <h1>Starships</h1>
+      <div className="starship-scrollable-container">
+        <div className="card-container">
+          {starship.map((item, index) => (
+            <CardItem key={index} name={item.name} id={item.uid}/>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 };
-	
 
+export default Starship;
