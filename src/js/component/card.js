@@ -11,18 +11,25 @@ function CardItem({ name, id, image }) {
   return (
     <div className="custom-card">
       <Card>
-        <Card.Img variant="top" src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`} />
+        <Card.Img
+          variant="top"
+          src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}
+        />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <div className="card-actions">
-            <Link className="learn-more-link" to="#" onClick={(e) => {
-              e.preventDefault();
-              actions.addFavorites(name);
-            }}>
+            <Link
+              className="learn-more-link"
+              to="#"
+              onClick={(e) => {
+                e.preventDefault();
+                actions.addFavorites(name);
+              }}
+            >
               Learn More
             </Link>
             <Button variant="dark" onClick={() => actions.addFavorites(name)}>
-              <FaHeart />
+              <FaHeart className="favorite-heart" />
             </Button>
           </div>
         </Card.Body>

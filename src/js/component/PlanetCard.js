@@ -6,21 +6,32 @@ import "../../styles/home.css";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
-function PlanetCard({ name, id, image }) { // Renamed to PlanetCard for clarity
+function PlanetCard({ name, id, image }) {
+  // Renamed to PlanetCard for clarity
   const { actions } = useContext(Context);
 
   return (
-    <div className="custom-card"> {/* Use the same custom class as before */}
-      <Card className="h-100 rounded-card"> {/* Added rounded-card class */}
-        <Card.Img 
+    <div className="custom-card">
+      {" "}
+      {/* Use the same custom class as before */}
+      <Card className="h-100 rounded-card">
+        {" "}
+        {/* Added rounded-card class */}
+        <Card.Img
           className="card-img-top"
           variant="top"
-          src={image || `https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} // Use image prop if provided
+          src={
+            image ||
+            `https://starwars-visualguide.com/assets/img/planets/${id}.jpg`
+          } // Use image prop if provided
         />
         <Card.Body className="d-flex flex-column">
           <Card.Title>{name}</Card.Title>
           <div className="mt-auto card-actions">
-            <Link className="learn-more-link" to="#" onClick={(e) => {
+            <Link
+              className="learn-more-link"
+              to="#"
+              onClick={(e) => {
                 e.preventDefault();
                 actions.addFavorites(name);
               }}
@@ -28,7 +39,7 @@ function PlanetCard({ name, id, image }) { // Renamed to PlanetCard for clarity
               Learn More
             </Link>
             <Button variant="dark" onClick={() => actions.addFavorites(name)}>
-              <FaHeart className="text-warning" />
+              <FaHeart className="favorite-heart" />
             </Button>
           </div>
         </Card.Body>

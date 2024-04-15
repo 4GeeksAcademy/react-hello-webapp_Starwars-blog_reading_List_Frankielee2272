@@ -59,14 +59,34 @@
 
 
 .custom-card {
-  width: 20rem;
+  width: 30rem;
   height: 25rem
 }
-
+.custom-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(224, 126, 126); /* Sets a white background color for the card body */
+  padding: 1rem; /* Adds some padding inside the card body */
+}
 .custom-card .card-img-top {
-  width: 100%; /* Makes image take up the full width of the card */
-  height: 12rem; /* Sets a fixed height for the image */
-  object-fit: cover; /* Ensures the image covers the area nicely */
+  width: 15rem; /* Makes image take up the full width of the card */
+  height: 20rem; /* Sets a fixed height for the image */
+  background-color: gainsboro; /* Adds a light gray background color */
+}
+.learn-more-link {
+  font-weight: bold;
+  color: black; /* Text color when not hovering */
+  padding: 0.5rem 1rem; /* Add padding to increase clickable area */
+  text-decoration: none; /* Remove the underline from the link */
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+.learn-more-link:hover {
+  color: rgb(9, 9, 0); /* Change the text color to yellow on hover */
+  background-color: rgb(234, 234, 157); /* Change the background color to yellow on hover */
+  box-shadow: 0 0 10px rgb(227, 227, 43); /* Add a yellow glow effect */
+  text-decoration: none; /* Ensure the underline does not reappear on hover */
 }
 
 .card-actions {
@@ -75,17 +95,6 @@
   align-items: center;
 }
 
-.learn-more-link {
-  font-weight: bold;
-  color: black;
-  background-color: yellow;
-  padding: 0.5rem 1rem; /* Add padding to increase clickable area */
-  text-decoration: none; /* Remove the underline from the link */
-}
-
-.fa-heart {
-  color: yellow;
-}
 
 /* Ensure .card-container applies to the direct parent of your .custom-card elements */
 .card-container {
@@ -95,6 +104,17 @@
   gap: 20px; /* Space between cards, can increase if needed */
   overflow-x: auto; /* Allows for horizontal scrolling */
   padding: 10px; /* Adds some padding within the container */
+  background-color:dimgrey;
 }
 
+/* This is the base state of the heart icon */
+.favorite-heart {
+  transition: color 0.3s, box-shadow 0.3s; /* Smooth transition for color and shadow */
+}
+
+/* Hover state for the button that contains the heart icon */
+button:hover .favorite-heart {
+  color: rgb(227, 227, 94); /* Change the color of the icon to yellow */
+  box-shadow: 0 0 8px rgb(227, 227, 123); /* Add a glow effect */
+}
 
