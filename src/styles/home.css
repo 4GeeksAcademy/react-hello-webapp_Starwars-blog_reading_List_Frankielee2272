@@ -8,6 +8,36 @@
   background-position: center; /* Centers the background image */
   min-height: 100vh; /* Ensures the .home element takes up at least the full height of the viewport */
 }
+.home:before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white overlay */
+  z-index: 1; /* Ensure it sits above the background image but below other content */
+}
+.home > * {
+  position: relative;
+  z-index: 2; /* Ensures that all direct children of .home are above the overlay */
+}
+.top-centered-image {
+  display: block;
+  margin: 0 auto; /* Centers the image horizontally */
+  position: absolute;
+  top: 0; /* Aligns the image to the top of the container */
+  left: 0; right: 0; /* These help ensure it remains centered */
+}
+
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://th.bing.com/th/id/OIP.q1iROYSmZKgDJJDQJhE7MQHaEo?w=250&h=180&c=7&r=0&o=5&dpr=1.6&pid=1.7");
+  background-size: cover; /* Ensures the background covers the entire element */
+  background-position: center; /* Centers the background image */
+  min-height: 100vh; /* Ensures the .home element takes up at least the full height of the viewport */
+}
 .home::before {
   content: "";
   position: absolute;
@@ -28,9 +58,43 @@
 }
 
 
+.custom-card {
+  width: 20rem;
+  height: 25rem
+}
+
+.custom-card .card-img-top {
+  width: 100%; /* Makes image take up the full width of the card */
+  height: 12rem; /* Sets a fixed height for the image */
+  object-fit: cover; /* Ensures the image covers the area nicely */
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.learn-more-link {
+  font-weight: bold;
+  color: black;
+  background-color: yellow;
+  padding: 0.5rem 1rem; /* Add padding to increase clickable area */
+  text-decoration: none; /* Remove the underline from the link */
+}
+
+.fa-heart {
+  color: yellow;
+}
+
+/* Ensure .card-container applies to the direct parent of your .custom-card elements */
 .card-container {
   display: flex;
-  flex-direction: row; /* Ensures horizontal layout */
-  gap: 20px;
-  white-space: nowrap; /* Prevents wrapping to a new line */
+  flex-direction: row;
+  flex-wrap: nowrap; /* Prevents wrapping to a new line */
+  gap: 20px; /* Space between cards, can increase if needed */
+  overflow-x: auto; /* Allows for horizontal scrolling */
+  padding: 10px; /* Adds some padding within the container */
 }
+
+
