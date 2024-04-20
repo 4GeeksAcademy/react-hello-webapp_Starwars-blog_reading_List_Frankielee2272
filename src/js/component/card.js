@@ -18,13 +18,9 @@ function CardItem({ name, id, image }) {
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <div className="card-actions">
-            <Link
-              className="learn-more-link"
-              to="#"
-              onClick={(e) => {
-                e.preventDefault();
-                actions.addFavorites(name);
-              }}
+            <Link           
+              className="learn-more-link"            
+            to={`/person/${id}`}            
             >
               Learn More
             </Link>

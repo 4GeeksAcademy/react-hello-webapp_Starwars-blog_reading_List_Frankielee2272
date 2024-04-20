@@ -12,18 +12,14 @@ function PlanetCard({ name, id, image }) {
 
   return (
     <div className="custom-card">
-      {" "}
-      {/* Use the same custom class as before */}
-      <Card className="h-100 rounded-card">
-        {" "}
-        {/* Added rounded-card class */}
+      <Card className="h-100 rounded-card" style={{ height: "200px" }}>
         <Card.Img
           className="card-img-top"
           variant="top"
           src={
             image ||
             `https://starwars-visualguide.com/assets/img/planets/${id}.jpg`
-          } // Use image prop if provided
+          }
         />
         <Card.Body className="d-flex flex-column">
           <Card.Title>{name}</Card.Title>

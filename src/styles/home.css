@@ -71,7 +71,7 @@
 }
 .custom-card .card-img-top {
   width: 15rem; /* Makes image take up the full width of the card */
-  height: 20rem; /* Sets a fixed height for the image */
+  height: 15rem; /* Sets a fixed height for the image */
   background-color: gainsboro; /* Adds a light gray background color */
 }
 .learn-more-link {
