@@ -8,6 +8,7 @@ import "../styles/index.css";
 // Import your own components
 import Layout from './layout';
 
+
 // Create a root container where the app will be rendered
 const root = createRoot(document.querySelector("#app"));
 

@@ -118,3 +118,25 @@ button:hover .favorite-heart {
   box-shadow: 0 0 8px rgb(227, 227, 123); /* Add a glow effect */
 }
 
+/* Add this class in your home.css file */
+.btn-home-glow {
+  background-color: black; /* Set the background color to black */
+  color: rgb(234, 228, 44); /* Set the text color to white or any color that suits on black */
+  border: none; /* Remove default border */
+  text-decoration: none; /* Remove underline from link */
+  padding: 10px 20px; /* Add some padding */
+  border-radius: 5px; /* Rounded corners */
+  transition: all 0.3s ease; /* Smooth transition for the glow effect */
+  position: relative; /* Position relative to allow pseudo-element positioning */
+}
+
+.btn-home-glow:hover, .btn-home-glow:focus {
+  color: yellow; /* Change text color to yellow on hover/focus */
+  box-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow; /* Yellow glow effect */
+  outline: none; /* Remove outline on focus */
+}
+
+/* Optional: if you want to remove the blue outline that appears on focus */
+.btn-home-glow:focus {
+  outline: none;
+}
